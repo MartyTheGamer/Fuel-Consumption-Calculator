@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel consumption calculator</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, Sans-Serif;
+            background-color: rgb(41, 41, 41);
+            color:white;
+        }
+        .main {
+            margin: auto;
+            width: 50%;
+        }
+        .center {
+            margin: auto;
+            max-width: 100%;
+            padding: 10px;
+        }
+        .background {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            top: 0px;
+            bottom: 0px;
+            max-width: 50%;
+            min-width: 550px;
+            height: 100%;
+            background-color: rgb(66, 66, 66);
+        }
+        .button {
+            text-align: center;
+            width: 33.3%;
+            margin-left: 33.3%;
+            margin-top: 10px;
+            margin-bottom: 10px;;
+        }
+
+        td {
+            width: 33.3%;
+            border: 3px red
+        }
+        table{
+            width: 100%;
+        }
+
+        input[type=text] {
+            width: 97%;
+        }
+
+        select{
+            width: 97%;
+        }
+    </style>
+</head>
+<body>
+    <div class = "background">
+    <div class="center">
+        <table>
+            <tr>
+                <td>
+                    <input type="radio" name="distanceSetting" value="manual" id="radiomanual" checked="checked"> Set distance manually
+                </td>
+                <td>
+                    <input type="radio" name="distanceSetting" value="city" id="radiocity"> Calculate city-to-city
+                </td>
+            </tr>
+            <tr>
+                <td><label for="distanceField" id="df">Distance</label></td>
+                <td><input type="text" id="distanceField"></td>
+                <td>
+                    <select id="distanceUnit">
+                        <option value="kilometres">Kilometres</option>
+                        <option value="miles">Miles</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="startField" id="sf1" style="color:#bcbcbc">Starting city</label></td>
+                <td><input type="text" id="startField" disabled></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label for="endField" id="sf2" style="color:#bcbcbc">Ending city</label></td>
+                <td><input type="text" id="endField" disabled></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label for="efficiencyField">Fuel efficiency</label></td>
+                <td><input type="text" id="efficiencyField"></td>
+                <td>
+                    <select id="consumptionUnit">
+                        <option value="l-100km">Litres per 100 km</option>
+                        <option value="km-l">Kilometres per litre</option>
+                        <option value="ukmpg">Miles per gallon (UK)</option>
+                        <option value="usampg">Miles per gallon (USA)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="fuelpriceField">Price per litre/gallon</label></td>
+                <td><input type="text" id="fuelpriceField"></td>
+                <td>                    <select id="fuelUnit">
+                    <option value="litres">Litres</option>
+                    <option value="ukgallons">Gallons (UK)</option>
+                    <option value="usagallons">Gallons (USA)</option>
+                </select></td>
+            </tr>
+        </table>
+        <input type="submit" id="submitButton" class="button">
+    </div>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
